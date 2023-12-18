@@ -13,7 +13,7 @@ const {
 } = require("./middleware/Controllers");
 
 const corsOptions = {
-  origin: "",
+  origin: "https://form-io.vercel.app",
   credentials: true,
 };
 
