@@ -12,8 +12,6 @@ const {
   CheckForm,
 } = require("./middleware/Controllers");
 
-console.log(process.env.DB_URL);
-
 const corsOptions = {
   origin: process.env.ORIGIN,
   credentials: true,
@@ -21,15 +19,15 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-
-app.post("/CreateForm", CreateForm);
-app.get("/users", GetUsers);
-app.get("/questions/:creator", GetQuestions);
-app.post("/CheckForm", CheckForm);
 app.use("/", (req, res, next) => {
   res.json({ message: "HEllo" });
   next();
 });
+app.post("/CreateForm", CreateForm);
+app.get("/users", GetUsers);
+app.get("/questions/:creator", GetQuestions);
+app.post("/CheckForm", CheckForm);
+
 
 mongoose
   .connect(process.env.DB_URL)
