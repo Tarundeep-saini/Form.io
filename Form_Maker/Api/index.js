@@ -13,7 +13,7 @@ const {
 } = require("./middleware/Controllers");
 
 const corsOptions = {
-  origin: process.env.ORIGIN,
+  origin: "",
   credentials: true,
 };
 
@@ -30,7 +30,7 @@ app.post("/CheckForm", CheckForm);
 
 
 mongoose
-  .connect(process.env.DB_URL)
+  .connect("")
   .then(() => {
     app.listen(port, () => {
       console.log("Server is Online");
