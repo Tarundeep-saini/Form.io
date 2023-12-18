@@ -1,0 +1,46 @@
+const express = require("express");
+const app = express();
+const port = 3000;
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const {
+  CreateForm,
+  GetUsers,
+  GetQuestions,
+  CheckForm,
+} = require("./middleware/Controllers");
+
+console.log(process.env.DB_URL);
+
+const corsOptions = {
+  origin: process.env.ORIGIN,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
+app.post("/CreateForm", CreateForm);
+app.get("/users", GetUsers);
+app.get("/questions/:creator", GetQuestions);
+app.post("/CheckForm", CheckForm);
+app.use("/", (req, res, next) => {
+  res.json({ message: "HEllo" });
+  next();
+});
+
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => {
+    app.listen(port, () => {
+      console.log("Server is Online");
+    });
+
+    console.log("Connected to Database");
+  })
+  .catch((err) => {
+    console.log("Not Connected to Server because: ");
+    console.log(err);
+  });
