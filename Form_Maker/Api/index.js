@@ -30,7 +30,7 @@ app.use("/", (req, res, next) => {
 });
 
 mongoose
-  .connect(process.env.DB_URL)
+  .connect(`mongodb+srv://tarundeepsaini037:Testing1234@location.in8fipa.mongodb.net/Forms?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(port, () => {
       console.log("Server is Online");
