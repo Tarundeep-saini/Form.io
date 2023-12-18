@@ -6,11 +6,9 @@ import Form_maker from "./Pages/Form_maker";
 import axios from "axios";
 import Form from "./Pages/Form";
 
-const API = import.meta.env.VITE_API;
-
 function App() {
-  console.log("here");
-  axios.defaults.baseURL = API;
+ 
+  axios.defaults.baseURL ="https://form-io.vercel.app";
   axios.defaults.withCredentials = true;
   return (
     <BrowserRouter>
