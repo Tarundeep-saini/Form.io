@@ -19,15 +19,15 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use("/", (req, res, next) => {
-  res.json({ message: "HEllo" });
-  next();
-});
+
 app.post("/CreateForm", CreateForm);
 app.get("/users", GetUsers);
 app.get("/questions/:creator", GetQuestions);
 app.post("/CheckForm", CheckForm);
-
+app.use("/", (req, res, next) => {
+  res.json({ message: "HEllo" });
+  next();
+});
 
 mongoose
   .connect("")
