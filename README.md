@@ -28,6 +28,6 @@ npm install
 npm run dev
 ```
 
-## Website Preview:
-# Making a Form: ![alt text](https://github.com/Tarundeep-saini/Mobile-Ordering_store/blob/main/Resources/Filling.png?raw=true)
-# Filling  a Fomr : ![alt text](https://github.com/Tarundeep-saini/Mobile-Ordering_store/blob/main/Resources/Making.png?raw=true)
+# Website Preview:
+## Making a Form: ![alt text](https://github.com/Tarundeep-saini/Form.io/blob/main/Resources/Filling.png?raw=true)
+## Filling  a Fomr : ![alt text](https://github.com/Tarundeep-saini/Form.io/blob/main/Resources/Making.png?raw=true)
